@@ -1,29 +1,22 @@
-#include <iostream>
 #include <stdio.h>
-#define MAX 9
-using namespace std;
 
 int n,m;
-int arr[MAX] = {0,};
-bool visited[MAX] = {0,};
+int arr[8] = {0};
+bool visited[9] = {0};
 
-void dfs(int cnt)
-{
-    if(cnt == m)
-    {
+void dfs(int cnt){
+    if(cnt == m){//when arrival
         for(int i = 0; i < m; i++)
-            cout << arr[i] << ' ';
-        cout << '\n';
+            printf("%d ", arr[i]);//print saved value
+        printf("\n");
         return;
     }
-    for(int i = 1; i <= n; i++)
-    {
-        if(!visited[i])
-        {
-            visited[i] = true;
-            arr[cnt] = i;
-            dfs(cnt+1);
-            visited[i] = false;
+    for(int i = 1; i <= n; i++){//if not M
+        if(!visited[i]){//if not visited
+            visited[i] = true;//visited
+            arr[cnt] = i;//count = visit
+            dfs(cnt+1);//next value
+            visited[i] = false;//backtracking
         }
     }
 }
