@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int n,m;
+int n,m,tmp;
 int arr[8] = {0};
 bool visited[9] = {0};
 
@@ -15,8 +15,14 @@ void dfs(int cnt){
     for(int i = 1; i <= n; i++){//if not M
         if(!visited[i]){//if not visited
             visited[i] = true;//visited
-            arr[cnt] = i;//count = visit
-            dfs(cnt+1);//next value
+			tmp = arr[cnt];
+			arr[cnt] = i;
+			if (arr[cnt - 1] < arr[cnt]){
+            	arr[cnt] = i;//count = visit
+            	dfs(cnt+1);//next value
+			}
+			else
+				arr[cnt] = tmp;
             visited[i] = false;//backtracking
         }
     }
