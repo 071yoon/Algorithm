@@ -1,6 +1,5 @@
 
-/*
-My Code
+//My Code
 #include <stdio.h>
 
 int n,m,tmp;
@@ -44,7 +43,7 @@ int main() {
     dfs(0);
 }
 
-*/
+/*
 
 
 //Version 2
@@ -77,4 +76,4 @@ int main()
     dfs("dddj", 0, 1);
 }
 
-
+*/
