@@ -26,7 +26,7 @@
       "environment": [],
       "program": "/Users/071yoon/Desktop/other_projects/Algorithm/C++/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
-      "MIMode": "gdb",
+      "MIMode": "lldb",
       "externalConsole": false
     }
   ]
