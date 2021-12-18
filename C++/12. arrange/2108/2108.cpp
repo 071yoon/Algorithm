@@ -1,51 +1,46 @@
-#include <stdio.h>
+#include <iostream>
 #include <algorithm>
+#include <vector>
 #include <cmath>
-#include <stdlib.h>
+#include <stdio.h>
 
-void print_mode(int *arr, int cnt){
-	int cntr1, max, flag, tmp, ans;
-
-	max = 0;
-	flag = 0;
-	for (int i = 0; i < cnt; i++){
-		cntr1 = 1;
-		tmp = i;
-		while (arr[i] == arr[i + 1]){
-			cntr1++;
-			i++;
-		}
-		i = tmp;
-		if (max == cntr1 && flag != 1){
-			ans = arr[i];
-			flag++;
-		}
-		else if (max < cntr1){
-			max = cntr1;
-			ans = arr[i];
-			flag = 0;
-		}
-	}
-	printf("%d\n", ans);
-}
-
-int main(){
-	int cnt, num;
-	int arr[8001] = {0};
-
-	scanf("%d", &cnt);
-	for (int i = 0; i < cnt; i++){
-		scanf("%d", &num);
-		arr[num]++;
-	}
-//	std::sort(arr, arr + cnt);
-	int sum = 0;
-	for (int i = 0; i < 8001; i++){
-		sum += arr[i];
-	}
-	printf("\n%.f\n", round((double)sum/(double)cnt));
-	printf("%d\n", arr[cnt / 2]);
-//	print_mode(arr, cnt);
-//	printf("%d", arr[cnt-1] - arr[0]);
-	delete[] arr;
+using namespace std;
+vector<int> arr;
+int main() {
+    int num,tmp,range,middle = 0,most_val,mean = 0;
+    int most = -9999;
+    int number[8001] = {0,};
+    bool not_first = false;
+    scanf("%d", &num);
+    for(int i = 0; i < num; i++)
+    {
+        scanf("%d", &tmp);
+        arr.push_back(tmp);
+        mean += tmp;
+        number[tmp+4000]++;
+    }
+    sort(arr.begin(),arr.end());
+    for(int i = 0; i < 8001; i++)
+    {
+        if(number[i] == 0)
+            continue;
+        if(number[i] == most)
+        {
+            if(not_first)
+            {
+                most_val = i - 4000;
+                not_first = false;
+            }
+        }
+        if(number[i] > most)
+        {
+            most = number[i];
+            most_val = i - 4000;
+            not_first = true;
+        }
+    }
+    middle = arr[arr.size()/2];
+    mean = round((float)mean / num);
+    range = arr.back() - arr.front();
+	printf("%d\n%d\n%d\n%d", mean, middle, most_val, range);
 }
