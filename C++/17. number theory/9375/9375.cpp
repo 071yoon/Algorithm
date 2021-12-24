@@ -25,11 +25,9 @@ int main(){
 			}
 			if (flag == -1){
 				vec.push_back(make_pair(b, 1));
-				cout << "added pair\n";
 			}
 			else{
 				vec[flag].second++;
-				cout << "added flag\n";
 			}
 		}
 		int ret = 1;
