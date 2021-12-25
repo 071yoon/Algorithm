@@ -14,16 +14,19 @@ int main(){
 		cin >> num;
 		arr[i] = num;
 	}
+	int tot_max = 0;
 	for (int i = 0; i < cnt; i++){
 		int max = 0;
-		for(int j = 0; j < i; j--){
+		for(int j = 0; j < i; j++){
 			if (arr[i] > arr[j]){
 				if (max < dp[j]){
 					max = dp[j];
 				}
 			}
 		}
-		dp[i] = max++;
+		dp[i] = max + 1;
+		if (dp[i] > tot_max)
+			tot_max = dp[i];
 	}
-
+	cout << tot_max;
 }
