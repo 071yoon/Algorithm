@@ -11,7 +11,7 @@ long long solve(int left, int right) {
     //기저 사례: 판자가 하나밖에 없는 경우
     if (left == right) 
 		return h[left];
-    //[left,min], [mid+1,right]의 두 구간으로 문제를 분할한다.
+    //[left,mid], [mid+1,right]의 두 구간으로 문제를 분할한다.
     int mid = (left + right) / 2;
     //분할한 문제를 각개격파
     long long ret = max(solve(left, mid), solve(mid + 1, right));
