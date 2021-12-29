@@ -2,5 +2,6 @@
 Algorithm practice
 
 백준 단계별 풀어보기 진행중
+<a href="https://navy-bear-12b.notion.site/Algorithm-aa104ad0e6bc4bad891506216c2c8004" target="_blank"><img src="https://img.shields.io/badge/Notion-FFFFFF?style=flat&logo=Notion&logoColor=000000"/></a>
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=dbs3924)](https://solved.ac/dbs3924)
