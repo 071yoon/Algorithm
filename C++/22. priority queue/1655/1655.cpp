@@ -7,22 +7,30 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 
-	priority_queue <int, vector<int>, greater<int> > que;
-	vector <int> inputs;
+	priority_queue <int> max_que;
+	priority_queue <int, vector <int>, greater <int> > min_que;
+
+
 	int cnt, num;
 	cin >> cnt;
 	for (int i = 0; i < cnt; i++)
 	{
 		cin >> num;
-		inputs.push_back(num);
-		for(int i = 0; i < inputs.size(); i++){
-			que.push(inputs[i]);
+		if (max_que.size() == min_que.size()){
+			max_que.push(num);
 		}
-		vector <int> vec;
-		for(int i = 0; i < que.size(); i++){
-			vec.push_back(que.top());
-			que.pop();
+		else if (max_que.size() > min_que.size()){
+			min_que.push(num);
 		}
-		cout << vec[vec.size() / 2] << "\n";
+		if ((!max_que.empty() && !min_que.empty()) && min_que.top() < max_que.top()){
+			int max_tmp = max_que.top();
+			int min_tmp = min_que.top();
+			max_que.pop();
+			min_que.pop();
+			max_que.push(min_tmp);
+			min_que.push(max_tmp);
+		}
+		cout << max_que.top() << "\n";
 	}
+	
 }
