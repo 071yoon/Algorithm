@@ -29,14 +29,12 @@ int main(){
 	cin.tie(NULL); cout.tie(NULL);
 	int cnt, num, line, value;
 	cin >> cnt;
-	for(int i = 0; i < cnt; i++){
+	for(int i = 1; i < cnt; i++){
 		cin >> num;
 		cin >> line;
-		while (line != -1){
-			cin >> value;
-			arr[num].push_back(make_pair(line, value));
-			cin >> line;
-		}
+		cin >> value;
+		arr[num].push_back(make_pair(line, value));
+		arr[line].push_back(make_pair(num, value));
 	}
 	DFS(1, 0);
 	memset(visited, 0, sizeof(visited));
