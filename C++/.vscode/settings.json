@@ -63,7 +63,8 @@
 	"typeinfo": "cpp",
 	"utility": "cpp",
 	"numeric": "cpp",
-	"queue": "cpp"
+	"queue": "cpp",
+	"set": "cpp"
 },
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/clang++",
