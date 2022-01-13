@@ -64,7 +64,8 @@
 	"utility": "cpp",
 	"numeric": "cpp",
 	"queue": "cpp",
-	"set": "cpp"
+	"set": "cpp",
+	"deque": "cpp"
 },
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/clang++",
