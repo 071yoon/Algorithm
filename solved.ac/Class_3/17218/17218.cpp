@@ -11,8 +11,10 @@ int main(){
 	int tmp = 0;
 	for(int i = 0; i < pass1.length(); i++){
 		for(int j = tmp; j < pass2.length(); j++){
-			if (pass1[i] == pass2[j])
+			if (pass1[i] == pass2[j]){
 				cout << pass2[i]
+			
+			}
 		}
 	}
 }
