@@ -18,3 +18,5 @@ public:
 		return (nums[sz - 1]);
     }
 };
+
+//XOR 풀이로 할 시 더 효율적이다
