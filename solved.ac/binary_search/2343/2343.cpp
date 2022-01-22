@@ -1,3 +1,4 @@
+//내 풀이 아니고 엄청 깔끔하게 적은 남의 풀이 쌔벼옴
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -29,7 +30,7 @@ int main() {
 			temp_sum += arr[i];
 		}
 		cnt++;
-		if (cnt > M) {	//mid값을 늘려야함
+		if (cnt > M) {
 			lo = mid + 1;
 		}
 		else {
