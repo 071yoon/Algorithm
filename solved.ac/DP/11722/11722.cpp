@@ -8,17 +8,14 @@ int main(){
 
 	int arr[1000];
 	int dp[1000];
-	int cnt;
+	int cnt, ret = 0;
 	cin >> cnt;
 	for(int i = 0; i < cnt; i++){
 		cin >> arr[i];
-	}
-	int ret = 0;
-	for(int i = 0; i < cnt; i++){
-		dp[i] = arr[i];
+		dp[i] = 1;
 		for(int j = 0; j < i; j++){
-			if (arr[i] > arr[j]){
-				dp[i] = max(dp[i], dp[j] + arr[i]);
+			if (arr[i] < arr[j]){
+				dp[i] = max(dp[i], dp[j] + 1);
 			}
 		}
 		ret = max(ret, dp[i]);
