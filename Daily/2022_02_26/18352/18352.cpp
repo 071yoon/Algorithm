@@ -1,43 +1,51 @@
+#include <queue>
+#include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-bool docking[100001] = {0};
-int plane[100001] = {0};
-int parent[100001] = {0};
-
-int finder(int x){
-	if (parent[x] == x)
-		return x;
-	else{
-		parent[x] = finder(parent[x]);
-		return parent[x];
-	}
-}
-
-void union_find(int x, int y){
-	x = finder(x);
-	y = finder(y);
-	parent[x] = y;
-}
+int N, M, K, X;
+vector <int> roads[300001];
+bool visited [300001] = {0};
 
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
 
-	int gates, planes;
-	cin >> gates >> planes;
-	int cnt = 0;
-	for(int i = 1; i <= gates; i++){
-		parent[i] = i;
+	int N, M, K, X, num1, num2;
+	cin >> N >> M >> K >> X;
+	for(int i = 0; i < M; i++){
+		cin >> num1 >> num2;
+		roads[num1].push_back(num2);
 	}
-	for(int i = 1; i <= planes; i++){
-		cin >> plane[i];
+	queue <pair<int, int> > que; //target, cnt
+	visited[X] = 1;
+	que.push(make_pair(X, 0));
+	vector <int> ret;
+	while (!que.empty()){
+		int target = que.front().first;
+		int cnt = que.front().second;
+		que.pop();
+		if (cnt >= K){
+			ret.push_back(target);
+		}
+		else{
+			for(int i = 0; i < roads[target].size(); i++){
+				if (!visited[roads[target][i]]){
+					visited[roads[target][i]] = 1;
+					que.push(make_pair(roads[target][i], cnt + 1));
+				}
+			}
+		}
 	}
-	for(int i = 1; i <= planes; i++){
-		int now = finder(plane[i]);
-		if (now == 0) break;
-		union_find(now, now - 1);
-		cnt++;
+	if (ret.size()){
+		sort(ret.begin(), ret.end());
+		for(int i = 0; i < ret.size(); i++){
+			cout << ret[i] << "\n";
+		}
+		return (0);
 	}
-	cout << cnt << "\n";
+	cout << "-1\n";
+	return (0);
+
 }
