@@ -1,6 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <set>
 using namespace std;
 
 int main(){
@@ -9,31 +8,23 @@ int main(){
 
 	long long x, cnt, num;
 	while(cin >> x >> cnt){
-	x *= 10000000;
-		vector<long long> vec;
-		for (int i = 0; i < cnt; i++) {
+		x *= 10000000;
+		set <long long> s;
+		for(int i = 0; i < cnt; i++){
 			cin >> num;
-			vec.push_back(num);
+			s.insert(num);
 		}
-		sort(vec.begin(), vec.end());
-		int low = 0, high = vec.size() - 1;
-		bool flag = false;
-		while (low < high) {
-			int sum = vec[low] + vec[high];
-			if (sum == x) {
-				flag = true;
-				break;
-			}
-			if (sum < x) {
-				low++;
-			}
-			else { 
-				high--;
+		int flag = 1;
+		while(!s.empty()){
+			long long num = *s.begin();
+			long long finder = x - num;
+			s.erase(s.begin());
+			if (s.count(finder)){
+				cout << "yes " << num << " " << finder << "\n";
+				flag = 0;
+				break ;
 			}
 		}
-		if (flag)
-			cout << "yes " << vec[low] << " " << +vec[high] << endl;
-		else
-			cout << "danger" << endl;
+		if (flag) cout << "danger\n";
 	}
 }
