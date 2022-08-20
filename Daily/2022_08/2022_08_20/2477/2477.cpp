@@ -26,9 +26,9 @@ int main(){
 			lines[(i + 1) % 6].second < dirs[lines[(i + 1) % 6].first] && 
 			lines[(i + 2) % 6].second < dirs[lines[(i + 2) % 6].first] &&
 			lines[(i + 3) % 6].second < dirs[lines[(i + 3) % 6].first]){ 
-			minus = lines[i + 1].second * lines[i + 2].second;
-			cout << i << "\n";
-			cout << "minus is " << minus << endl;
+			// cout << lines[(i + 1) % 6].second << " " << lines[(i + 2) % 6].second << "\n";
+			minus = lines[(i + 1) % 6].second * lines[(i + 2) % 6].second;
+			// cout << "minus is " << minus << endl;
 			break;
 		}
 	}
