@@ -65,6 +65,15 @@
     "stack": "cpp",
     "deque": "cpp",
     "queue": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "filesystem": "cpp",
+    "__tree": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "fstream": "cpp",
+    "iomanip": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "variant": "cpp"
   }
 }
