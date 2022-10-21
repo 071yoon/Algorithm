@@ -13,6 +13,7 @@ rl.on("line", (line) => {
     cnt = parseInt(line);
   } else if (counter < cnt) {
     counter++;
+    ``;
     const data = line.split(" ");
     let result = Number(data[0]);
     for (let i = 1; i < data.length; i++) {
