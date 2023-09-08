@@ -19,8 +19,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/yeonggi/Desktop/Algorithm",
-      "program": "/Users/yeonggi/Desktop/Algorithm/build/Debug/outDebug"
+      "cwd": "/Users/071yoon/Desktop/Algorithm/Daily/2023_04/2023-04-02",
+      "program": "/Users/071yoon/Desktop/Algorithm/Daily/2023_04/2023-04-02/build/Debug/outDebug"
     }
   ]
 }
