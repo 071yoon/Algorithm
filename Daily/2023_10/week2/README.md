@@ -1,4 +1,4 @@
-2023 10월 1주차
+2023 10월 2주차
 
 1. [게임개발](https://www.acmicpc.net/problem/1516)
    > G3 / DP, 위상정렬
