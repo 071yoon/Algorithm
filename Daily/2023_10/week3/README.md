@@ -12,3 +12,6 @@
 4. [해킹](https://www.acmicpc.net/problem/10282)
    > G4 / 다익스트라
    > 너무 무난무난한 다익스트라의 정석
+5. [근손실](https://www.acmicpc.net/problem/18429)
+   > S3 / 백트래킹
+   > 간단한 백트래킹 문제
